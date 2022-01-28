@@ -1,9 +1,9 @@
 terraform {
   required_providers {
-    #kubectl = {
-    #  source  = "gavinbunney/kubectl"
-    #  version = "~> 1"
-    #}
+    kubectl = {
+      source  = "gavinbunney/kubectl"
+      version = "~> 1"
+    }
 
     shell = {
       source  = "scottwinkler/shell"

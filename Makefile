@@ -1,14 +1,16 @@
-test: fmt init validate
+test: setup fmt init validate clean
 
 i init:
 	terraform init
-
-u upgrade:
-	terraform init -upgrade
 
 v validate:
 	terraform validate
 
 f fmt:
-	terraform fmt -recursive
+	terraform fmt
 
+setup:
+	for i in tests/*; do ln -vfs $$i; done
+
+clean:
+	for i in tests/*; do rm -v $${i#tests/}; done
